@@ -4,7 +4,7 @@
 ## Summary
 In this project, we are building a work pipeline that connect external data source to SQLlite database and execute some SQL queries in Python script. The SQL queries will include four basic operations that you can perform on a database or data repository, namely Create, Read, Update, Delete (CRUD operations). 
 
-Things included are:
+## Structure
 
 * `Makefile`
 
