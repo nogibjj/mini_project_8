@@ -5,19 +5,33 @@ import sqlite3
 import csv
 import os
 
-dataset = "/workspace/mini_project_5/data/real_2016_air.csv"
-# load csv file and insert into a sqlite3 database
-def load(dataset = "/workspace/mini_project_5/data/real_2016_air.csv"):
+def load(dataset = "data/rainfall.csv"):
 
     # print the full working directory
-    print(os.getcwd())
-    payload = csv.reader(open(dataset,newline=""),delimiter=",")
-    conn = sqlite3.connect("real_2016_air.db")
+    #print(os.getcwd())
+    payload = csv.reader(open(dataset, newline=""),delimiter=",")
+    conn = sqlite3.connect("rainfall.db")
     c = conn.cursor()
-    c.execute("DROP TABLE IF EXISTS real_2016_air")
-    c.execute("CREATE TABLE real_2016_air (id,T,TM,Tm,SLP,H,VV,V,VM,PM 2.5)")
+    # create new table for the database rainfall
+    c.execute("DROP TABLE IF EXISTS rainfall")
+    c.execute('''
+              CREATE TABLE rainfall (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              Date DATE,
+              POONDI FLOAT,
+              CHOLAVARAM FLOAT,
+              REDHILLS FLOAT,
+              CHEMBARAMBAKKAM FLAOT)
+              ''')
     # insert values
-    c.executemany("INSERT INTO real_2016_air VALUES(?,?,?,?,?,?,?,?,?,?)",payload)
+    c.executemany('''
+                  INSERT INTO rainfall 
+                  (Date,POONDI,CHOLAVARAM,REDHILLS,CHEMBARAMBAKKAM)
+                  VALUES(?,?,?,?,?)
+                  ''', payload)
     conn.commit()
     conn.close()
-    return "real_2016_air.db"
+    return "rainfall.db"
+
+if __name__ == "__main__":
+    load()

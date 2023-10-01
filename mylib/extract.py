@@ -2,13 +2,14 @@
 extract a dataset from URL
 '''
 import requests
-url = "https://raw.githubusercontent.com/MainakRepositor/Datasets/master/Air%20Quality/real_2016_air.csv"
-filepath = "./data/real_2016_air.csv"
-def extract_dataSource(url = "https://raw.githubusercontent.com/MainakRepositor/Datasets/master/Air%20Quality/real_2016_air.csv",
-                       filepath = "./data/real_2016_air.csv"):
-    ''' extract data from url to a filepath '''
+
+def extract(url = "https://raw.githubusercontent.com/MainakRepositor/Datasets/master/Chennai%20rain/chennai_reservoir_rainfall.csv",
+
+            filepath = "./data/rainfall.csv"):
     with requests.get(url) as r:
-        with open(filepath, 'wb') as f:
-            f.write(r.connect)
+        with open(filepath,"wb") as f:
+            f.write(r.content)
     return filepath
 
+if __name__ == "__main__":
+    extract()
