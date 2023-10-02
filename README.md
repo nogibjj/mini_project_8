@@ -7,21 +7,6 @@ In this project, we are building a work pipeline that connect external data sour
 
 ## Structure
 
-* `Makefile`
-
-* `Pytest`
-
-* `pandas`
-
-* `Pylint`
-
-* `Dockerfile`
-
-* `GitHub copilot`
-
-* `jupyter` and `ipython` 
-
-* A base set of libraries for devops and web
-
-* `githubactions` 
+* `extract.py`,`load_tran`
+ 
 
