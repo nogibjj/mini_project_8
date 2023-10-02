@@ -7,6 +7,9 @@ In this project, we are building a work pipeline that connect external data sour
 
 ## Structure
 
-* `extract.py`,`load_tran`
+* in `mylib`directory, `extract.py` extract raw data from online url source. `transform_load.py` transform the original raw data format from `.csv` to `.db` SQLite database and builds connection.
+* `query.py` contains CRUD queries to perform the basic SQL executions.
+
+## Test
  
 
