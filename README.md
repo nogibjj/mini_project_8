@@ -11,5 +11,5 @@ In this project, we are building a work pipeline that connect external data sour
 * `query.py` contains CRUD queries to perform the basic SQL executions.
 
 ## Test
-
+![Alt text](<Screenshot 2023-10-11 at 12.27.57.png>)
 
